@@ -20,7 +20,7 @@ import java.util.UUID;
 public class Fornecedor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false, columnDefinition = "Binary(16)")
+	@Column(name = "id", nullable = false)
 	@EqualsAndHashCode.Include
 	private UUID id;
 
