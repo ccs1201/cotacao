@@ -16,7 +16,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ControllerBase<T, S extends CotacaoServiceInterface<T>> {
 
-	private final S service;
+	protected final S service;
 	@GetMapping
 	Collection<T> getAll() {
 		return service.findAll();
