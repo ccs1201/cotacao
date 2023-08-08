@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 public class CotacaoSeriveException extends RuntimeException {
 
-	private HttpStatus httpStatus;
+	private final HttpStatus httpStatus;
 	public CotacaoSeriveException(HttpStatus httpStatus, String message) {
 		super(message);
 		this.httpStatus = httpStatus;
