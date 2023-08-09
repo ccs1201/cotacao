@@ -24,7 +24,6 @@ import java.util.UUID;
 @Entity
 @Table(name = "fornecedor")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
 public class Fornecedor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
