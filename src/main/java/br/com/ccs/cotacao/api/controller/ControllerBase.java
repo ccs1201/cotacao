@@ -31,7 +31,6 @@ public class ControllerBase<T, S extends CotacaoServiceInterface<T>> {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@PathVariable UUID id) {
 		service.delete(id);
-
 	}
 
 	@PostMapping

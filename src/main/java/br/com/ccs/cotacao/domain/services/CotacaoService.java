@@ -1,6 +1,7 @@
 package br.com.ccs.cotacao.domain.services;
 
 import br.com.ccs.cotacao.domain.entities.Cotacao;
+import br.com.ccs.cotacao.domain.entities.Fornecedor;
 import br.com.ccs.cotacao.domain.exceptions.CotacaoSeriveException;
 import br.com.ccs.cotacao.domain.repositories.CotacaoRepository;
 import lombok.RequiredArgsConstructor;
@@ -35,5 +36,12 @@ public class CotacaoService implements CotacaoServiceInterface<Cotacao> {
 	@Override
 	public Collection<Cotacao> findAll() {
 		return repository.findAll();
+	}
+
+	public Cotacao addFornecedor(UUID cotacao_id, Fornecedor fornecedor) {
+		var cotacao = findById(cotacao_id);
+		cotacao.getFornecedores().add(fornecedor);
+
+		return repository.saveAndFlush(cotacao);
 	}
 }
